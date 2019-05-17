@@ -80,20 +80,11 @@ function updateToolTip(chosenXAxis, circlesGroup) {
     }
 
     if (chosenXAxis === "income") {
-        xlabel = "Income"
-        ylabel = "% Lacking Healthcare"
-    }
-    if (chosenXAxis === "obesity") {
-        xlabel = "Obesity (%)"
-        ylabel = "% Lacking Healthcare"
-    }
-
-    if (chosenXAxis === "smokes") {
-        xlabel = "Smokers (%)"
+        xlabel = "Household Income (Median)"
         ylabel = "% Lacking Healthcare"
     }
     else {
-        xlabel = "Age"
+        xlabel = "Age (Median)"
         ylabel = "% Lacking Healthcare";
     }
 
@@ -205,7 +196,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
         .attr("value", "age") // value to grab for event listener
         .classed("inactive", true)
         // .classed("xlabel")
-        .text("Age");
+        .text("Age (Median)");
     
     let IncomeLabel = labelsGroup.append("text")
         .attr("x", 0)
@@ -213,24 +204,24 @@ function updateToolTip(chosenXAxis, circlesGroup) {
         .attr("value", "income") // value to grab for event listener
         .classed("inactive", true)
         // .classed("xlabel")
-        .text("Income");
+        .text("Household Income (Median)");
 
     
-    let ObesityLabel = labelsGroup.append("text")
-        .attr("x", 0)
-        .attr("y", 80)
-        .attr("value", "obesity") // value to grab for event listener
-        .classed("inactive", true)
-        // .classed("xlabel")
-        .text("Obesity (%)");
+    // let ObesityLabel = labelsGroup.append("text")
+    //     .attr("x", 0)
+    //     .attr("y", 80)
+    //     .attr("value", "obesity") // value to grab for event listener
+    //     .classed("inactive", true)
+    //     // .classed("xlabel")
+    //     .text("Obesity (%)");
     
-    let SmokesLabel = labelsGroup.append("text")
-        .attr("x", 0)
-        .attr("y", 100)
-        .attr("value", "smokes") // value to grab for event listener
-        .classed("inactive", true)
-        // .classed("xlabel")
-        .text("Smoker (%)");
+    // let SmokesLabel = labelsGroup.append("text")
+    //     .attr("x", 0)
+    //     .attr("y", 100)
+    //     .attr("value", "smokes") // value to grab for event listener
+    //     .classed("inactive", true)
+    //     // .classed("xlabel")
+    //     .text("Smoker (%)");
 
     // append y axis
     chartGroup.append("text")
@@ -281,12 +272,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
                 IncomeLabel
                     .classed("active", false)
                     .classed("inactive", true);
-                SmokesLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                ObesityLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
+                
             }
             if (chosenXAxis === 'age') {
                 PovertyLabel
@@ -298,48 +284,9 @@ function updateToolTip(chosenXAxis, circlesGroup) {
                 IncomeLabel
                     .classed("active", false)
                     .classed("inactive", true);
-                SmokesLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                ObesityLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
+                
             }
-            if (chosenXAxis === 'obesity') {
-                PovertyLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                AgeLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                IncomeLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                SmokesLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                ObesityLabel
-                    .classed("active", true)
-                    .classed("inactive", false);
-            }
-            if (chosenXAxis === 'smokes') {
-                PovertyLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                AgeLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                IncomeLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                SmokesLabel
-                    .classed("active", true)
-                    .classed("inactive", false);
-                ObesityLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-            }
-
+            
             else if (chosenXAxis === 'income') {
                 PovertyLabel
                     .classed("active", false)
@@ -350,12 +297,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
                 IncomeLabel
                     .classed("active", true)
                     .classed("inactive", false);
-                SmokesLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
-                ObesityLabel
-                    .classed("active", false)
-                    .classed("inactive", true);
+                
     }
         }
     });
