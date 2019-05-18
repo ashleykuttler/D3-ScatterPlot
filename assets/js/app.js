@@ -88,22 +88,23 @@ function updateToolTip(chosenXAxis, circlesGroup) {
         ylabel = "% Lacking Healthcare";
     }
 
-    const toolTip = d3.tip()
-        .attr("class", "tooltip")
-        .offset([80, -60])
-        .html(function(d) {
-            return (`${d.abbr}<br>${xlabel} ${d[chosenXAxis]}<br>${ylabel} ${[d.healthcare]}`);
-        });
+    // ToopTIP function to show data box on mouse over 
+//     const toolTip = d3.tip()
+//         .attr("class", "tooltip")
+//         .offset([80, -60])
+//         .html(function(d) {
+//             return (`${d.abbr}<br>${xlabel} ${d[chosenXAxis]}<br>${ylabel} ${[d.healthcare]}`);
+//         });
 
-    circlesGroup.call(toolTip);
+//     circlesGroup.call(toolTip);
 
-    circlesGroup.on("mouseover", function(data) {
-        toolTip.show(data, this);
-    })
-    // onmouseout event
-    .on("mouseout", function(data, index) {
-        toolTip.hide(data, this);
-    });
+//     circlesGroup.on("mouseover", function(data) {
+//         toolTip.show(data, this);
+//     })
+
+//     // .on("mouseout", function(data) {
+//     //     toolTip.hide(data, this);
+//     // });
 
   return circlesGroup;
 }
